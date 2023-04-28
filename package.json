@@ -4,7 +4,6 @@
   "description": "Boilerplate for WDD 330 SleepOutside project",
   "main": "main.js",
   "scripts": {
-    "preinstall": "rm -rf /dist",
     "start": "vite",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview",
