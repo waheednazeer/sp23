@@ -6,6 +6,11 @@ function renderCartContents() {
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
+function renderCartTotal()
+{
+  document.querySelector(".total").innerHTML = cartTotalTemplate();
+}
+
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
@@ -25,4 +30,25 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
+function cartTotalTemplate() {
+  const newItem = `<div class="cart-card divider">
+
+
+    <h2 class="card__name">Grand Total= $${cartTotal()}</h2>
+  
+</div>`;
+
+  return newItem;
+}
+
+function cartTotal() {
+  const cartItems = getLocalStorage("so-cart");
+  const price = cartItems.map((item) => (item.FinalPrice));
+  let total=price.reduce((a, b) => a + b, 0);
+ 
+  return total;  
+}
+console.log(cartTotal());
+
 renderCartContents();
+renderCartTotal();
