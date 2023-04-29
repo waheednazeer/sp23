@@ -48,7 +48,7 @@ function cartTotal() {
  
   return total;  
 }
-console.log(cartTotal());
+//console.log(cartTotal());
 
 renderCartContents();
 renderCartTotal();
