@@ -231,10 +231,11 @@ button {
   .mission {
     font-size: 1.2em;
   }
-  .cart-card {
+  .cart-card, .cart-total-grid {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+ 
 }
 
 footer {
