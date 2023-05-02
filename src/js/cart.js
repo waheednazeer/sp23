@@ -31,10 +31,11 @@ function cartItemTemplate(item) {
 }
 
 function cartTotalTemplate() {
-  const newItem = `<div class="cart-card divider">
+  const newItem = `<div class="cart-total-grid">
 
 
-    <h2 class="card__name">Grand Total= $${cartTotal()}</h2>
+    <h3 class="cart-total">Grand Total </h3>
+    <h3 class="cart-total-price">$${cartTotal()}</h3>
   
 </div>`;
 
