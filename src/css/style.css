@@ -173,6 +173,7 @@ button {
   font-size: var(--small-font);
   /* max-height: 120px; */
   align-items: center;
+  width: 620px;
 }
 
 .cart-card__image {
