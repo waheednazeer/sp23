@@ -15,6 +15,8 @@ function renderCartTotal()
 }
 
 function cartItemTemplate(item) {
+  //item.FinalPrice=item.FinalPrice * localStorage.getItem(item.Id+"qty");
+  //console.log(localStorage.getItem(item.Id+"qty"));
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
@@ -26,7 +28,8 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
+  <p class="cart-card__quantity">qty: ${localStorage.getItem(item.Id+"qty")}</p>
+  
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
 
@@ -46,8 +49,11 @@ function cartTotalTemplate() {
 }
 
 function cartTotal() {
+ 
   const cartItems = getLocalStorage("so-cart");
   const price = cartItems.map((item) => (item.FinalPrice));
+
+
   let total=price.reduce((a, b) => a + b, 0);
  
   return total;  
